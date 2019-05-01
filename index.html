@@ -25,7 +25,7 @@
                 <img v-bind:src="getImage(i-1)" class="card-img-top" v-bind:alt="arr[i-1].title">
                 <div class="card-body">
 
-                    <button >Adult Ticket</button><button>Child Ticket</button>
+                    <button v-on:click="incrementVarAdult(i)">Adult Ticket</button><button v-on:click="incremantVarChild(i)">Child Ticket</button>
                     <h5 class="card-title"> {{arr[i-1].title}} </h5>
                     <p class="card-text"> {{arr[i-1].overview}} </p>
                 </div>
@@ -35,6 +35,8 @@
         </div>
     </div>
     <div v-for="i in count">
+
+
 
         </div>
     </div>
