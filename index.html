@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Movie Tickets</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>Movies</h1>
+    <div id="app">
+        <div class="card-deck">
+        <div v-for="i in count">
+
+
+            <div class="card" style="width: 18rem;">
+                <img v-bind:src="getImage(i-1)" class="card-img-top" v-bind:alt="arr[i-1].title">
+                <div class="card-body">
+
+                    <button >Adult Ticket</button><button>Child Ticket</button>
+                    <h5 class="card-title"> {{arr[i-1].title}} </h5>
+                    <p class="card-text"> {{arr[i-1].overview}} </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div v-for="i in count">
+
+        </div>
+    </div>
+
+        <script src="javascript.js"></script>
+
+</body>
+
+</html>
