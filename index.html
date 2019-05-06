@@ -25,7 +25,7 @@
                 <img v-bind:src="getImage(i-1)" class="card-img-top" v-bind:alt="arr[i-1].title">
                 <div class="card-body">
 
-                    <button v-on:click="incrementVarAdult(i)">Adult Ticket</button><button v-on:click="incremantVarChild(i)">Child Ticket</button>
+                    <button v-on:click="incrementTicket(i-1,0)">Adult Ticket</button><button v-on:click="incrementTicket(i-1,1)">Child Ticket</button>
                     <h5 class="card-title"> {{arr[i-1].title}} </h5>
                     <p class="card-text"> {{arr[i-1].overview}} </p>
                 </div>
@@ -34,11 +34,38 @@
 
         </div>
     </div>
-    <div v-for="i in count">
-
+    <div id="allTickets" v-if="number > 0">
+            <div class="movieTicket">
+                    <h2 class="title">Movie</h2> 
+                    <h2 class="ticket_times">Adult Tickets</h2>
+                    <h2 class="ticket_times">Children Tickets</h2>
+                    <h2 class="sub">Subtotal</h2><div style="display:none;">{{number}}</div> 
+                    <h2 class="ticketBnt">Button</h2>
+                </div>
+    <div v-for="i in count" v-if="varArr[i-1][0] != 0 || varArr[i-1][1] != 0">
+            <div class="movieTicket" >
+                <h2 class="title">{{arr[i-1].title}}  </h2> 
+                <h2 class="ticket_times" v-if="varArr[i-1][0] != 0">{{varArr[i-1][0]}} X ${{adult}}  </h2>
+                <button class="decreaseBtn" v-on:click="decrementTicket(i-1,0)" v-if="varArr[i-1][0] != 0">-- </button>
+                <h2 class="ticket_times" v-if="varArr[i-1][0] == 0"></h2>
+                <h2 class="ticket_times" v-if="varArr[i-1][1] != 0">{{varArr[i-1][1]}} X ${{child}} </h2>
+                <button class="decreaseBtn" v-on:click="decrementTicket(i-1,1)" v-if="varArr[i-1][1] != 0">-- </button>
+                <h2 class="ticket_times" v-if="varArr[i-1][1] == 0"></h2>
+                <h2 class="sub">${{getSubtotal(i-1)}} </h2><div style="display:none;">{{number}}</div>
+                <button v-on:click="removeTickets(i-1)" class="ticket_button ticketBnt">Remove</button> 
+            </div>
 
 
         </div>
+        <div>
+            <h3>{{totalTicketsA}}</h3>
+            <h3>{{totalTicketsC}}</h3>
+            <h3>{{totalTickets}}</h3>
+
+        </div>
+    </div>
+
+
     </div>
 
         <script src="javascript.js"></script>

@@ -1,0 +1,27 @@
+.movieTicket h2{
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px;
+    
+}
+.movieTicket {
+    border: solid 1px black;
+    height: 100px;
+}
+.allTickets {
+    margin-top: 100px;
+}
+
+.title {
+    width: 200px;
+}
+.ticket_times {
+    width: 200px;
+}
+.sub{
+    width: 100px;
+}
+
+.ticketBnt {
+    width: 100px;
+}
