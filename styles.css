@@ -1,27 +1,109 @@
-.movieTicket h2{
-    display: inline-block;
-    font-size: 20px;
-    padding: 20px;
-    
-}
+
 .movieTicket {
-    border: solid 1px black;
-    height: 100px;
+    border: solid 2px rgb(211, 211, 211);
+    height: 80px;
+    border-radius: 500px;
 }
-.allTickets {
-    margin-top: 100px;
+#allTickets {
+    margin: 100px auto;
+    min-width: 900px;
+    max-width: 1200px;
 }
+td, th {
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+}
+
 
 .title {
-    width: 200px;
-}
-.ticket_times {
-    width: 200px;
-}
-.sub{
-    width: 100px;
+  
+    font-weight: bold;
+    text-align: left;
 }
 
-.ticketBnt {
-    width: 100px;
+th{
+    color: lightskyblue;
+    text-align: center;
+}
+
+.total {
+    border: solid 2px  rgb(211, 211, 211);
+    text-align: right;
+ 
+}
+
+.total td {
+    text-align: right;
+   margin-right: 10px;
+ 
+    
+}
+.total .number {
+    text-align: left;
+    padding-left: 20px;
+}
+
+
+
+#allTickets .total {
+    border: solid 2px  rgb(211, 211, 211);
+    margin: 0 auto;
+    text-align: right;
+    padding: 10px;
+    padding-right: 10%;
+
+}
+
+button {
+    padding: 15px;
+    margin: 5px;
+    background-color: lightskyblue;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    -moz-transition: color 1s ease;
+    -o-transition: color 1s ease;
+    -w2Bkit-transition: color 1s ease;
+    transition: color 1s ease;
+    transition: background-color 0.55s ease;
+    
+}
+
+button:hover {
+    background-color: dodgerblue;
+}
+
+.card-deck {
+    margin: 0 auto !important;
+    text-align: center !important;
+    width: 100%;
+    
+}
+.card {
+    margin: 0 auto !important;
+    text-align: center !important;
+    width: 350px;
+    
+    
+    
+}
+
+.decreaseBtn {
+    height: 50px;
+    width: 50px;
+}
+i{
+    font-size: 20px;
+    text-align: center;
+    vertical-align: center;
+}
+h1 {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-text {
+    height: 300px;
 }

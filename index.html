@@ -8,9 +8,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>Movie Tickets</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
         <div v-for="i in count">
 
 
-            <div class="card" style="width: 18rem;">
+            <div class="card" >
                 <img v-bind:src="getImage(i-1)" class="card-img-top" v-bind:alt="arr[i-1].title">
                 <div class="card-body">
 
@@ -34,36 +35,36 @@
 
         </div>
     </div>
-    <div id="allTickets" v-if="number > 0">
-            <div class="movieTicket">
-                    <h2 class="title">Movie</h2> 
-                    <h2 class="ticket_times">Adult Tickets</h2>
-                    <h2 class="ticket_times">Children Tickets</h2>
-                    <h2 class="sub">Subtotal</h2><div style="display:none;">{{number}}</div> 
-                    <h2 class="ticketBnt">Button</h2>
-                </div>
-    <div v-for="i in count" v-if="varArr[i-1][0] != 0 || varArr[i-1][1] != 0">
-            <div class="movieTicket" >
-                <h2 class="title">{{arr[i-1].title}}  </h2> 
-                <h2 class="ticket_times" v-if="varArr[i-1][0] != 0">{{varArr[i-1][0]}} X ${{adult}}  </h2>
-                <button class="decreaseBtn" v-on:click="decrementTicket(i-1,0)" v-if="varArr[i-1][0] != 0">-- </button>
-                <h2 class="ticket_times" v-if="varArr[i-1][0] == 0"></h2>
-                <h2 class="ticket_times" v-if="varArr[i-1][1] != 0">{{varArr[i-1][1]}} X ${{child}} </h2>
-                <button class="decreaseBtn" v-on:click="decrementTicket(i-1,1)" v-if="varArr[i-1][1] != 0">-- </button>
-                <h2 class="ticket_times" v-if="varArr[i-1][1] == 0"></h2>
-                <h2 class="sub">${{getSubtotal(i-1)}} </h2><div style="display:none;">{{number}}</div>
-                <button v-on:click="removeTickets(i-1)" class="ticket_button ticketBnt">Remove</button> 
-            </div>
 
 
-        </div>
-        <div>
-            <h3>{{totalTicketsA}}</h3>
-            <h3>{{totalTicketsC}}</h3>
-            <h3>{{totalTickets}}</h3>
+    <table id="allTickets" v-if="number > 0">
+        <tr class="movieTicket">
+                <th >Movie</th> 
+                <th >Adult Tickets</th>
+                <th >Children Tickets</th>
+                <th >Subtotal</th>
+                <th >Button</th>
+        </tr>
+        <tr class="movieTicket" v-for="i in count" v-if="varArr[i-1][0] != 0 || varArr[i-1][1] != 0">
+               
+                    <td class="title">{{arr[i-1].title}}  </td> 
+                    <td class="ticket_times" v-if="varArr[i-1][0] != 0">{{varArr[i-1][0]}} X ${{adult}} <button class="decreaseBtn" v-on:click="decrementTicket(i-1,0)" v-if="varArr[i-1][0] != 0"><i class="fas fa-minus"></i></button> </td>
+                   
+                    <td class="ticket_times" v-if="varArr[i-1][0] == 0"></td>
+                    <td class="ticket_times" v-if="varArr[i-1][1] != 0">{{varArr[i-1][1]}} X ${{child}} <button class="decreaseBtn" v-on:click="decrementTicket(i-1,1)" v-if="varArr[i-1][1] != 0"><i class="fas fa-minus"></i></button></td>
+                  
+                    <td class="ticket_times" v-if="varArr[i-1][1] == 0"></td>
+                    <td class="sub">${{getSubtotal(i-1)}} </h2><div style="display:none;">{{number}}</td>
+                    <td><button v-on:click="removeTickets(i-1)" class="ticket_button ticketBnt">Remove</button> </td>
+                </tr>
+        
+        <tr class="total"><td colspan="4">Adult Subtotal: </td><td class="number">${{totalTicketsA}}</td></tr>
+        <tr class="total"><td colspan="4">Children Subtotal: </td><td class="number" >${{totalTicketsC}}</td></tr>
+        <tr class="total"><td colspan="4">Total: </td><td class="number">${{totalTickets}}</td></tr>
+    </table>
 
-        </div>
-    </div>
+   
+   
 
 
     </div>
