@@ -5,6 +5,7 @@
     border-radius: 500px;
 }
 #allTickets {
+    font-family: 'Maven Pro', sans-serif;
     margin: 100px auto;
     min-width: 900px;
     max-width: 1200px;
@@ -15,7 +16,11 @@ td, th {
     text-align: center;
 }
 
+.card-title {
+    font-weight: bold;
+    margin-top: 20px;
 
+}
 .title {
   
     font-weight: bold;
@@ -23,7 +28,7 @@ td, th {
 }
 
 th{
-    color: lightskyblue;
+    color: dodgerblue;
     text-align: center;
 }
 
@@ -46,6 +51,7 @@ th{
 
 
 
+
 #allTickets .total {
     border: solid 2px  rgb(211, 211, 211);
     margin: 0 auto;
@@ -62,6 +68,7 @@ button {
     border-radius: 50px;
     border: none;
     color: white;
+    background-image: linear-gradient(to bottom,rgb(40, 147, 255), rgba(0,0,0,0));
     -moz-transition: color 1s ease;
     -o-transition: color 1s ease;
     -w2Bkit-transition: color 1s ease;
@@ -71,22 +78,30 @@ button {
 }
 
 button:hover {
-    background-color: dodgerblue;
+    background-color: rgb(0, 121, 241);
+    
 }
 
-.card-deck {
-    margin: 0 auto !important;
-    text-align: center !important;
-    width: 100%;
+#movie {
+    display: inline-block;
+    text-align: center;
+    vertical-align:middle;
     
 }
+.card-deck {
+   display: block;
+   width: 100%;
+   text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
 .card {
-    margin: 0 auto !important;
-    text-align: center !important;
+    margin: auto !important;
     width: 350px;
-    
-    
-    
+    display: inline-block !important;
+    font-family: 'Maven Pro', sans-serif;
+  
+   
 }
 
 .decreaseBtn {
@@ -98,12 +113,107 @@ i{
     text-align: center;
     vertical-align: center;
 }
-h1 {
+header h1 {
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+    font-size: 80px;
+    background: -webkit-linear-gradient(dodgerblue, lightskyblue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    float: left;
+    margin-left: 70px; 
+    margin-top: 10px;
+
+    font-family: 'Megrim', cursive; 
+
+}
+header {
+    margin-bottom: 50px;
+    background-color: rgb(37, 37, 37);
+    border-bottom: solid lightskyblue 10px;
+    -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(dodgerblue), to(lightskyblue), color-stop(0.5, lightskyblue), color-stop(0.5, dodgerblue)) 21 30 30 21 repeat repeat;
+    height: 150px;
+    box-shadow: 15px 1px 15px rgba(0,0,0,0.6);
+    text-align: center;
 }
 
+footer {
+
+    margin-top: 50px;
+    background-color: rgb(37, 37, 37);
+    border-top: solid lightskyblue 10px;
+    -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(lightskyblue), to(dodgerblue), color-stop(0.5, dodgerblue), color-stop(0.5, lightskyblue)) 21 30 30 21 repeat repeat;
+    height: 100px;
+    box-shadow: 10px 1px 15px rgba(0,0,0,0.6);
+    text-align: center;
+}
+footer p {
+    text-align: center;
+    background: -webkit-linear-gradient(dodgerblue, gray);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Maven Pro', sans-serif;
+    margin-top: 30px;
+    font-size: 25px;
+}
+header i, header h1, header p {
+    display: inline-block;
+    -moz-transition: color 1s ease;
+    -o-transition: color 1s ease;
+    -w2Bkit-transition: color 1s ease;
+    transition: color 1s ease;
+    transition: background-color 0.55s ease;
+    
+    
+   
+}
+tr:nth-child(even) {background: rgb(240, 240, 240)}
+tr:nth-child(odd) {background: rgb(255, 255, 255)}
+
+caption {
+    text-align: right;
+}
+
+header #checkout {
+    color: dodgerblue;
+    float: right;
+    margin-top: 50px;
+    margin-right: 100px;
+    
+   
+    
+
+}
+
+header #checkout:hover i {
+    color: rgb(72, 185, 255);
+}
+header #checkout:hover p {
+    background-color: lightskyblue;
+}
+
+header #checkout:hover {
+    cursor: pointer;
+}
+header i {
+    font-size: 30px;
+}
+header p {
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 16px;
+    margin-left: 5px;
+    background-color: dodgerblue;
+    background-image: linear-gradient(to bottom,rgb(101, 196, 255), rgba(0,0,0,0));
+    padding: 5px;
+    border-radius: 50px;
+    color: white;
+    width: 35px;
+    height: 35px;
+    vertical-align: super;
+    
+}
 .card-text {
     height: 300px;
 }

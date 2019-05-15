@@ -1,4 +1,5 @@
 
+//use this number to change the amount of movies
 var mainCount = 3;
 
 $.getJSON("https://api.themoviedb.org/3/movie/now_playing?api_key=54400abc068adca7102fee24733fbc06&language=en-US&page=1", function (jsObject) {
@@ -40,7 +41,7 @@ $.getJSON("https://api.themoviedb.org/3/movie/now_playing?api_key=54400abc068adc
                 var cT = this.varArr[x][1] * this.child;
 
                 var subT = aT + cT;
-                return subT;
+                return Math.round(subT * 100) / 100;;
 
             },
             
@@ -87,17 +88,31 @@ $.getJSON("https://api.themoviedb.org/3/movie/now_playing?api_key=54400abc068adc
         },
         computed: {
             totalTicketsA: function(){
-                return this.totalA * 6.99;
+                var num = (this.totalA * 6.99);
+                return Math.round(num * 100) / 100;
                 
             },
             totalTicketsC: function(){
-                return this.totalC * 3.99;
+                var num = (this.totalC * 3.99);
+                return Math.round(num * 100) / 100;
                 
             },
             totalTickets: function(){
-                    return (this.totalA * 6.99) + (this.totalC * 3.99);
+                    var num = ((this.totalA * 6.99) + (this.totalC * 3.99));
+                    return Math.round(num * 100) / 100;
                 
-            }
+            },
+            tax: function(){
+                var num =  (this.totalTickets * 0.081);
+                return Math.round(num * 100) / 100;
+            
+        },
+        totalFull: function(){
+           var num = (this.tax + this.totalTickets);
+           return Math.round(num * 100) / 100;
+        
+    }
+        
         }
     
     })

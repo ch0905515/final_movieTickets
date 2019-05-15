@@ -11,18 +11,23 @@
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>Movie Tickets</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro|Megrim" rel="stylesheet"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 
 <body>
-
-    <h1>Movies</h1>
+    
+    
     <div id="app">
+            <header>
+                    <h1>Vision X Cinema</h1>
+                   <div id="checkout"><a href="#allTickets"><i class="fas fa-shopping-cart"></i><p id="checkoutNum">{{number}}</p></a></div> 
+                </header>
         <div class="card-deck">
-        <div v-for="i in count">
+        <div v-for="i in count" id="movie">
 
 
-            <div class="card" >
+            <div class="card">
                 <img v-bind:src="getImage(i-1)" class="card-img-top" v-bind:alt="arr[i-1].title">
                 <div class="card-body">
 
@@ -36,8 +41,9 @@
         </div>
     </div>
 
-
+    
     <table id="allTickets" v-if="number > 0">
+            <caption>Total Number Tickets: {{number}}</caption>
         <tr class="movieTicket">
                 <th >Movie</th> 
                 <th >Adult Tickets</th>
@@ -58,13 +64,17 @@
                     <td><button v-on:click="removeTickets(i-1)" class="ticket_button ticketBnt">Remove</button> </td>
                 </tr>
         
-        <tr class="total"><td colspan="4">Adult Subtotal: </td><td class="number">${{totalTicketsA}}</td></tr>
-        <tr class="total"><td colspan="4">Children Subtotal: </td><td class="number" >${{totalTicketsC}}</td></tr>
-        <tr class="total"><td colspan="4">Total: </td><td class="number">${{totalTickets}}</td></tr>
+        <tr class="total"><td colspan="4">Adult Subtotal: </td><td class="number">{{totalA}} @ ${{totalTicketsA}}</td></tr>
+        <tr class="total"><td colspan="4">Children Subtotal: </td><td class="number" >{{totalC}} @ ${{totalTicketsC}}</td></tr>
+        <tr class="total"><td colspan="4">Total Combined: </td><td class="number">${{totalTickets}}</td></tr>
+        <tr class="total"><td colspan="4">Total Tax: </td><td class="number">${{tax}}</td></tr>
+        <tr class="total"><td colspan="4">Total: </td><td class="number">${{totalFull}}</td></tr>
     </table>
 
    
-   
+   <footer>
+       <p>Vision X Cinema</p>
+   </footer>
 
 
     </div>
